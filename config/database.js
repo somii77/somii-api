@@ -1,16 +1,11 @@
+const path = require('path');
+
 module.exports = ({ env }) => ({
   connection: {
-    client: 'postgres',
+    client: 'sqlite',
     connection: {
-      host: env('DATABASE_HOST', '127.0.0.1'),
-      port: env.int('DATABASE_PORT', 5432),
-      database: env('DATABASE_NAME', 'somii-api'),
-      user: env('DATABASE_USERNAME', 'somii-api'),
-      password: env('DATABASE_PASSWORD', 'vnzxYjUBBGDI'),
-      ssl: {
-        rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false),
-      },
+      filename: path.join(__dirname, '..', env('DATABASE_FILENAME', '.tmp/data.db')),
     },
-    debug: false,
+    useNullAsDefault: true,
   },
 });
