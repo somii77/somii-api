@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoice_line_items",
+  "info": {
+    "singularName": "invoice-line-item",
+    "pluralName": "invoice-line-items",
+    "displayName": "invoice_line_item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quantity": {
+      "type": "integer"
+    },
+    "row_amount": {
+      "type": "integer"
+    },
+    "deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "deleted_at": {
+      "type": "datetime"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "invoice_line_items"
+    },
+    "invoice": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::invoice.invoice",
+      "inversedBy": "invoice_line_items"
+    }
+  }
+}

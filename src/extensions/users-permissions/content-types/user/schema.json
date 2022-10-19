@@ -74,6 +74,12 @@
       "relation": "manyToOne",
       "target": "api::account.account",
       "inversedBy": "users"
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::customer.customer",
+      "inversedBy": "users"
     }
   }
 }
