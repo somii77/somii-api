@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_pricings",
+  "info": {
+    "singularName": "product-pricing",
+    "pluralName": "product-pricings",
+    "displayName": "product_pricing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "price": {
+      "type": "decimal"
+    },
+    "deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "deleted_at": {
+      "type": "datetime"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "product_pricings"
+    },
+    "currency": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::currency.currency",
+      "inversedBy": "product_pricings"
+    },
+    "starting_at": {
+      "type": "datetime"
+    },
+    "ending_at": {
+      "type": "datetime"
+    }
+  }
+}
