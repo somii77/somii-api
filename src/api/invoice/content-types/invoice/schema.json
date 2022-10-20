@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoices",
+  "info": {
+    "singularName": "invoice",
+    "pluralName": "invoices",
+    "displayName": "Invoice"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "invoice_date": {
+      "type": "date"
+    },
+    "due_date": {
+      "type": "date"
+    },
+    "deleted": {
+      "type": "boolean"
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::customer.customer",
+      "inversedBy": "invoices"
+    },
+    "invoice_line_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::invoice-line-item.invoice-line-item",
+      "mappedBy": "invoice"
+    }
+  }
+}
