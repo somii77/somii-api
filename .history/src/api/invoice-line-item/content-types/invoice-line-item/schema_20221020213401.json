@@ -4,7 +4,7 @@
   "info": {
     "singularName": "invoice-line-item",
     "pluralName": "invoice-line-items",
-    "displayName": "Invoice_line_items",
+    "displayName": "Invoice_line_item",
     "description": ""
   },
   "options": {
