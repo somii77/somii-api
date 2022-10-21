@@ -74,6 +74,13 @@
       "relation": "manyToOne",
       "target": "api::customer.customer",
       "inversedBy": "users"
+    },
+    "deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "deleted_at": {
+      "type": "datetime"
     }
   }
 }
