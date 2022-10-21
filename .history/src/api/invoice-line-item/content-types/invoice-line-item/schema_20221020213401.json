@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "product_pricings",
+  "collectionName": "invoice_line_items",
   "info": {
-    "singularName": "product-pricing",
-    "pluralName": "product-pricings",
-    "displayName": "Product_pricings",
+    "singularName": "invoice-line-item",
+    "pluralName": "invoice-line-items",
+    "displayName": "Invoice_line_item",
     "description": ""
   },
   "options": {
@@ -12,8 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "price": {
-      "type": "decimal"
+    "quantity": {
+      "type": "integer"
+    },
+    "row_amount": {
+      "type": "integer"
     },
     "deleted": {
       "type": "boolean",
@@ -26,19 +29,13 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::product.product",
-      "inversedBy": "product_pricings"
+      "inversedBy": "invoice_line_items"
     },
-    "currency": {
+    "invoice": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::currency.currency",
-      "inversedBy": "product_pricings"
-    },
-    "starting_at": {
-      "type": "datetime"
-    },
-    "ending_at": {
-      "type": "datetime"
+      "target": "api::invoice.invoice",
+      "inversedBy": "invoice_line_items"
     }
   }
 }
