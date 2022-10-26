@@ -81,6 +81,12 @@
     },
     "deleted_at": {
       "type": "datetime"
+    },
+    "notificationEmail": {
+      "type": "boolean"
+    },
+    "showChat": {
+      "type": "boolean"
     }
   }
 }
