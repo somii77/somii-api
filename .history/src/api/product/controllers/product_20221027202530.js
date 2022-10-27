@@ -18,22 +18,19 @@ module.exports = createCoreController("api::product.product", ({ strapi }) => ({
         publishedAt: new Date(),
       },
     });
-
-    for (let i = 0; i < data.pricings.length; i++) {
-      await strapi.entityService.create(
-        "api::product-pricing.product-pricing",
-        {
-          data: {
-            price: data.pricings[i].price,
-            currency: data.pricings[i].currencyValue,
-            product: entry.id,
-            publishedAt: new Date(),
-          },
-        }
-      );
-    }
+    const productPricings = await strapi.entityService.create(
+      "api::product-pricing.product-pricing",
+      {
+        data: {
+          price: data.pricings[0].price,
+          currency: data.pricings[0].currencyValue,
+          product: entry.id,
+          publishedAt: new Date(),
+        },
+      }
+    );
     console.log("product post data", entry);
-
+    console.log("product post productPricings", productPricings);
     return entry;
   },
 }));

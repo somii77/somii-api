@@ -33,7 +33,7 @@ module.exports = createCoreController("api::product.product", ({ strapi }) => ({
       );
     }
     console.log("product post data", entry);
-
+    console.log("product post productPricings", productPricings);
     return entry;
   },
 }));
