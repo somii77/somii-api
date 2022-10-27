@@ -31,11 +31,11 @@ module.exports = createCoreController("api::product.product", ({ strapi }) => ({
           },
         }
       );
-      newPricings.push({ ...result });
+      newPricings.push({ result });
     }
 
     console.log("product post data", entry);
 
-    return { ...entry, product_pricings: [...newPricings] };
+    return { ...entry, pricings: newPricings };
   },
 }));

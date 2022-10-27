@@ -36,6 +36,6 @@ module.exports = createCoreController("api::product.product", ({ strapi }) => ({
 
     console.log("product post data", entry);
 
-    return { ...entry, product_pricings: [...newPricings] };
+    return { ...entry, prices: [...newPricings] };
   },
 }));
