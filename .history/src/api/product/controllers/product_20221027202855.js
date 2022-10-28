@@ -18,9 +18,9 @@ module.exports = createCoreController("api::product.product", ({ strapi }) => ({
         publishedAt: new Date(),
       },
     });
-    const newPricings = [];
+
     for (let i = 0; i < data.pricings.length; i++) {
-      const result = await strapi.entityService.create(
+      await strapi.entityService.create(
         "api::product-pricing.product-pricing",
         {
           data: {
@@ -31,11 +31,9 @@ module.exports = createCoreController("api::product.product", ({ strapi }) => ({
           },
         }
       );
-      newPricings.push({ ...result });
     }
-
     console.log("product post data", entry);
 
-    return { ...entry, product_pricings: [...newPricings] };
+    return entry;
   },
 }));
