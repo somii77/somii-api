@@ -45,6 +45,14 @@
     },
     "month_per_interval": {
       "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "plan",
+        "user",
+        "brand"
+      ]
     }
   }
 }
