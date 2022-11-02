@@ -16,10 +16,11 @@
       "type": "date"
     },
     "due_date": {
-      "type": "date"
+      "type": "datetime"
     },
     "deleted": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "invoice_line_items": {
       "type": "relation",
