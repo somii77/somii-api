@@ -94,7 +94,7 @@ module.exports = createCoreController("api::brand.brand", ({ strapi }) => ({
     );
     // console.log("updated entry", entry);
     const newBrandSocials = [];
-    for (let i = 0; i < data.socials.length; i++) {
+    for (let i = 0; i < data.invoiceItems.length; i++) {
       const result = await strapi.entityService.update(
         "api::brands-social-account.brands-social-account",
         data.socials[i].id,
