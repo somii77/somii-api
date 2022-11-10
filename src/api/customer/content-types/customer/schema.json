@@ -63,6 +63,18 @@
       "relation": "oneToMany",
       "target": "plugin::users-permissions.user",
       "mappedBy": "customer"
+    },
+    "brands": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::brand.brand",
+      "mappedBy": "customer"
+    },
+    "brands_social_accounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::brands-social-account.brands-social-account",
+      "mappedBy": "customer"
     }
   }
 }

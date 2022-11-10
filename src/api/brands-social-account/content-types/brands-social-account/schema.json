@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brands_social_accounts",
+  "info": {
+    "singularName": "brands-social-account",
+    "pluralName": "brands-social-accounts",
+    "displayName": "Brands_social_accounts",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "brand": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::brand.brand",
+      "inversedBy": "brands_social_accounts"
+    },
+    "social_account": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::social-account.social-account",
+      "inversedBy": "brands_social_accounts"
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::customer.customer",
+      "inversedBy": "brands_social_accounts"
+    },
+    "activated": {
+      "type": "boolean",
+      "default": false
+    },
+    "connected": {
+      "type": "boolean",
+      "default": false
+    },
+    "deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "deleted_at": {
+      "type": "datetime"
+    }
+  }
+}
