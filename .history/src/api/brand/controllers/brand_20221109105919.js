@@ -36,46 +36,6 @@ module.exports = createCoreController("api::brand.brand", ({ strapi }) => ({
 
     return { ...entry, socials: [...newBrandSocials] };
   },
-  async customUpdate(ctx) {
-    const { id } = ctx.request.params;
-    const { data } = ctx.request.body;
-    console.log("req data", data);
-    const entry = await strapi.entityService.update(
-      "api::brand.brand",
-      id,
-      {
-        data: {
-          name: data.name,
-        },
-        populate: ['customer']
-      }
-    );
-    console.log("updated entry", entry);
-    const newSocials = [];
-    for (let i = 0; i < data.socials.length; i++) {
-      if (data.socials[i].id) {
-        await strapi.entityService.delete('api::brands-social-account.brands-social-account', data.socials[i].id);
-      } else {
-        const result = await strapi.entityService.create(
-          "api::brands-social-account.brands-social-account",
-          {
-            data: {
-            social_account: data.socials[i].socialId,
-            customer: entry.customer.id,
-            brand: data.id,
-            publishedAt: new Date(),
-            },
-          }
-        );
-        newSocials.push({ ...result });
-        
-      }
-    }
-
-    // console.log("product post data", entry);
-
-    return { ...entry, newSocials };
-  },
   async customDelete(ctx) {
     const { id } = ctx.request.params;
     const { data } = ctx.request.body;

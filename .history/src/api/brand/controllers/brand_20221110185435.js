@@ -61,7 +61,7 @@ module.exports = createCoreController("api::brand.brand", ({ strapi }) => ({
           {
             data: {
             social_account: data.socials[i].socialId,
-            customer: entry.customer.id,
+            customer: data.customer,
             brand: data.id,
             publishedAt: new Date(),
             },
