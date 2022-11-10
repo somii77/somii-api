@@ -4,7 +4,7 @@
   "info": {
     "singularName": "product-pricing",
     "pluralName": "product-pricings",
-    "displayName": "product_pricing",
+    "displayName": "Product_pricing",
     "description": ""
   },
   "options": {
@@ -33,12 +33,6 @@
       "relation": "manyToOne",
       "target": "api::currency.currency",
       "inversedBy": "product_pricings"
-    },
-    "starting_at": {
-      "type": "datetime"
-    },
-    "ending_at": {
-      "type": "datetime"
     }
   }
 }

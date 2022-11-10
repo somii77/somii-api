@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "Product"
+    "displayName": "Products",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -41,6 +42,17 @@
       "relation": "oneToMany",
       "target": "api::invoice-line-item.invoice-line-item",
       "mappedBy": "product"
+    },
+    "month_per_interval": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "plan",
+        "user",
+        "brand"
+      ]
     }
   }
 }

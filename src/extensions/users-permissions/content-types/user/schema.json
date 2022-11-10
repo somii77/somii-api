@@ -6,7 +6,7 @@
     "description": "",
     "singularName": "user",
     "pluralName": "users",
-    "displayName": "User"
+    "displayName": "Users"
   },
   "options": {
     "draftAndPublish": false,
@@ -69,17 +69,24 @@
     "lastname": {
       "type": "string"
     },
-    "account": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::account.account",
-      "inversedBy": "users"
-    },
     "customer": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::customer.customer",
       "inversedBy": "users"
+    },
+    "deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "deleted_at": {
+      "type": "datetime"
+    },
+    "notificationEmail": {
+      "type": "boolean"
+    },
+    "showChat": {
+      "type": "boolean"
     }
   }
 }

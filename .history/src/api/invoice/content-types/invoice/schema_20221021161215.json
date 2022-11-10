@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoices",
+  "info": {
+    "singularName": "invoice",
+    "pluralName": "invoices",
+    "displayName": "Invoices",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "invoice_date": {
+      "type": "date"
+    },
+    "due_date": {
+      "type": "date"
+    },
+    "deleted": {
+      "type": "boolean"
+    },
+    "invoice_line_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::invoice-line-item.invoice-line-item",
+      "mappedBy": "invoice"
+    },
+    "email": {
+      "type": "email"
+    },
+    "name": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "address1": {
+      "type": "string"
+    },
+    "address2": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "postal_code": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "invoice_status": {
+      "type": "string"
+    },
+    "invoice_number": {
+      "type": "string"
+    },
+    "paid_at": {
+      "type": "datetime"
+    },
+    "deleted_at": {
+      "type": "datetime"
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::customer.customer",
+      "inversedBy": "invoices"
+    }
+  }
+}
