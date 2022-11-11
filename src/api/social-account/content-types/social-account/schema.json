@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "social_accounts",
+  "info": {
+    "singularName": "social-account",
+    "pluralName": "social-accounts",
+    "displayName": "Social_accounts"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "brands_social_accounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::brands-social-account.brands-social-account",
+      "mappedBy": "social_account"
+    }
+  }
+}
