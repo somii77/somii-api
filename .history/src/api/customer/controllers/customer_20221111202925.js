@@ -30,7 +30,7 @@ module.exports = createCoreController(
       });
       // console.log("invoice posted data", entry);
       console.log("data", entry);
-      return { data: entry };
+      return { ...entry };
     },
   })
 );
