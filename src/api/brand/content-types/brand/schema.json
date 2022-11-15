@@ -33,6 +33,10 @@
     },
     "deleted_at": {
       "type": "datetime"
+    },
+    "isDefault": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

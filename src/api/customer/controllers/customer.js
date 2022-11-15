@@ -21,15 +21,16 @@ module.exports = createCoreController(
           },
         }
       );
+
       await strapi.entityService.create("api::brand.brand", {
         data: {
           name: "Default Brand",
           customer: entry.id,
+          isDefault: true,
           publishedAt: new Date(),
         },
       });
-      // console.log("invoice posted data", entry);
-      console.log("data", entry);
+
       return { data: entry };
     },
   })
